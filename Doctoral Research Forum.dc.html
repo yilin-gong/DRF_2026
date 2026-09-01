@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doctoral Research Forum — ILS, Indiana University Bloomington</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="icon" href="iu-trident.ico">
+<style>
+  html { -webkit-font-smoothing: antialiased; }
+  body { margin: 0; background: #FFFFFF; color: #1C1A17; font-family: 'Source Serif 4', 'Source Serif Pro', Georgia, serif; }
+  * { box-sizing: border-box; }
+  a { color: #7A1913; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: #1C1A17; }
+</style>
+</helmet>
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 40px">
+
+  <header style="display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 24px 0; border-bottom: 4px double #CDBFA9">
+    <div style="display: flex; align-items: center; gap: 14px">
+      <img src="iu-trident.ico" alt="Indiana University" style="width: 34px; height: 34px; display: block">
+      <span style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6257">Information &amp; Library Science · Indiana University Bloomington</span>
+    </div>
+    <nav style="display: flex; gap: 28px; font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase">
+      <a href="#about" style="color: #1C1A17; text-decoration: none" style-hover="color: #7A1913">About</a>
+      <a href="Schedule.dc.html" style="color: #7A1913; text-decoration: none" style-hover="color: #1C1A17">Schedule &amp; Presenters</a>
+    </nav>
+  </header>
+  </div>
+
+  <section style="position: relative; background-image: url('luddy-building.png'); background-size: cover; background-position: center 58%; display: flex; align-items: flex-end; min-height: 580px">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,10,9,0.10) 0%, rgba(20,10,9,0.48) 52%, rgba(99,20,15,0.90) 100%)"></div>
+    <div style="position: relative; width: 100%; max-width: 1180px; margin: 0 auto; padding: 140px 40px 56px">
+      <div style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.86); margin-bottom: 24px">Annual Event · {{ year }}</div>
+      <h1 style="color: #FFFFFF; font-size: 68px; line-height: 1.08; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 26px; text-wrap: balance">Doctoral Research Forum</h1>
+      <p style="font-size: 23px; line-height: 1.55; font-style: italic; color: rgba(255,255,255,0.94); margin: 0; max-width: 34ch; text-wrap: pretty">A day for Ph.D. students to share research in progress, and to hear what colleagues are working on.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 40px; font-size: 19px; line-height: 1.6; color: #FFFFFF">
+        <div>
+          <div style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 8px">Date</div>
+          {{ dateLabel }}
+        </div>
+        <div>
+          <div style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 8px">Venue</div>
+          {{ venue }}
+        </div>
+        <div>
+          <div style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 8px">Talk length</div>
+          10–15 minutes
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="max-width: 1180px; margin: 0 auto; padding: 0 40px 120px">
+  <section id="about" style="display: grid; grid-template-columns: 220px 1fr; gap: 64px; padding: 84px 0; border-bottom: 1px solid #DED5C7">
+    <h2 style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6257; margin: 8px 0 0">About the forum</h2>
+    <div style="max-width: 62ch">
+      <p style="font-size: 22px; line-height: 1.62; margin: 0 0 26px; text-wrap: pretty">The Doctoral Research Forum is a yearly event of the ILS. It focuses on motivating Ph.D. students to participate in innovative research through the lens of information science, library science, social sciences, policy studies, and other disciplines.</p>
+      <p style="font-size: 19px; line-height: 1.75; color: #3A352E; margin: 0; text-wrap: pretty">Current PhD students may present either completed or in-progress research. This is a chance to share work at any stage of completion (please do not be shy in sharing work in progress), and a great opportunity to hear what our fellow colleagues are up to. The presentation would be about 10-15 minutes.</p>
+    </div>
+  </section>
+  <section style="display: grid; grid-template-columns: 220px 1fr; gap: 64px; padding: 80px 0 96px">
+    <h2 style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6257; margin: 8px 0 0">Disciplines</h2>
+    <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0 32px">
+      <sc-for list="{{ disciplines }}" as="d" hint-placeholder-count="5">
+        <li style="padding: 10px 0; font-size: 19px; line-height: 1.45; color: #3A352E">{{ d.name }}</li>
+      </sc-for>
+    </ul>
+  </section>
+  <footer style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: baseline; padding-top: 36px; border-top: 1px solid #DED5C7; font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; color: #6B6257">
+    <span>Department of Information &amp; Library Science · Luddy School, Indiana University Bloomington</span>
+    <a href="Schedule.dc.html" style="color: #7A1913">Schedule &amp; presenters →</a>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;dateLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Friday, November 7&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;venue&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Dorsey Auditorium&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;year&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;2026&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    return {
+      year: p.year ?? "2026",
+      dateLabel: p.dateLabel ?? "Friday, November 7",
+      venue: p.venue ?? "Dorsey Auditorium",
+      disciplines: [
+        { num: "01", name: "Information science" },
+        { num: "02", name: "Library science" },
+        { num: "03", name: "Social sciences" },
+        { num: "04", name: "Policy studies" },
+        { num: "05", name: "Other disciplines" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schedule &amp; Presenters — Doctoral Research Forum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="icon" href="iu-trident.ico">
+<style>
+  html { -webkit-font-smoothing: antialiased; }
+  body { margin: 0; background: #FFFFFF; color: #1C1A17; font-family: 'Source Serif 4', 'Source Serif Pro', Georgia, serif; }
+  * { box-sizing: border-box; }
+  a { color: #7A1913; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: #1C1A17; }
+</style>
+</helmet>
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 40px 120px">
+
+  <header style="display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 24px 0; border-bottom: 4px double #CDBFA9">
+    <div style="display: flex; align-items: center; gap: 14px">
+      <img src="iu-trident.ico" alt="Indiana University" style="width: 34px; height: 34px; display: block">
+      <a href="Doctoral Research Forum.dc.html" style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6257; text-decoration: none" style-hover="color: #7A1913">← Doctoral Research Forum</a>
+    </div>
+    <nav style="display: flex; gap: 28px; font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase">
+      <a href="#keynote" style="color: #1C1A17; text-decoration: none" style-hover="color: #7A1913">Keynote</a>
+      <a href="#schedule" style="color: #1C1A17; text-decoration: none" style-hover="color: #7A1913">Schedule</a>
+      <a href="#presenters" style="color: #1C1A17; text-decoration: none" style-hover="color: #7A1913">Presenters</a>
+    </nav>
+  </header>
+
+  <section style="padding: 80px 0 56px; border-bottom: 1px solid #DED5C7">
+    <div style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6257; margin-bottom: 24px">{{ dateLabel }} · {{ venue }}</div>
+    <h1 style="font-size: 60px; line-height: 1.1; font-weight: 600; letter-spacing: -0.015em; margin: 0; max-width: 20ch; text-wrap: balance">Schedule &amp; presenters</h1>
+    <p style="font-size: 20px; line-height: 1.65; color: #3A352E; margin: 24px 0 0; max-width: 58ch; text-wrap: pretty">{{ statusNote }}</p>
+  </section>
+
+  <section id="keynote" style="display: grid; grid-template-columns: 220px 1fr; gap: 64px; padding: 72px 0; border-bottom: 1px solid #DED5C7">
+    <h2 style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6257; margin: 8px 0 0">Opening keynote</h2>
+    <div style="max-width: 62ch">
+      <img src="jblumenstock.png" alt="Joshua Blumenstock" style="width: 200px; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; border: 1px solid #DED5C7; background: #F7F4EF; float: left; margin: 6px 32px 20px 0; display: block">
+      <div>
+        <div style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #7A1913; margin-bottom: 12px">Opens the day</div>
+        <h3 style="font-size: 34px; line-height: 1.1; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 10px">Joshua Blumenstock</h3>
+        <p style="font-size: 19px; line-height: 1.5; font-style: italic; color: #3A352E; margin: 0 0 24px">Chancellor's Professor at the UC Berkeley School of Information and the Goldman School of Public Policy</p>
+        <p style="font-size: 19px; line-height: 1.75; color: #3A352E; margin: 0 0 18px; text-wrap: pretty">Joshua Blumenstock is a professor at the UC Berkeley School of Information, the director of the Global Opportunity Lab, and the faculty co-director of the Center for Effective Global Action.</p>
+        <p style="font-size: 19px; line-height: 1.75; color: #3A352E; margin: 0 0 24px; text-wrap: pretty">His research combines methods from computer science and economics, with a focus on how AI and other technologies can better address the needs of poor and vulnerable populations. His work appears in Science, Nature and PNAS, as well as economics journals and computer science conferences.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px 8px; margin-bottom: 22px">
+          <span style="font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 12px; letter-spacing: 0.06em; color: #3A352E; border: 1px solid #DED5C7; padding: 6px 12px">Economic Policy</span>
+          <span style="font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 12px; letter-spacing: 0.06em; color: #3A352E; border: 1px solid #DED5C7; padding: 6px 12px">Global Development</span>
+          <span style="font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 12px; letter-spacing: 0.06em; color: #3A352E; border: 1px solid #DED5C7; padding: 6px 12px">Artificial Intelligence</span>
+        </div>
+        <a href="https://www.jblumenstock.com/" target="_blank" rel="noopener" style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #7A1913">Faculty website →</a>
+      </div>
+      <div style="clear: both"></div>
+    </div>
+  </section>
+
+  <section id="schedule" style="display: grid; grid-template-columns: 220px 1fr; gap: 64px; padding: 72px 0; border-bottom: 1px solid #DED5C7">
+    <h2 style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6257; margin: 8px 0 0">Programme</h2>
+    <ol style="list-style: none; margin: 0; padding: 0; display: grid; gap: 0">
+      <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="8">
+        <li style="display: grid; grid-template-columns: 150px 1fr; gap: 40px; padding: 24px 0; border-top: 1px solid #DED5C7; align-items: baseline">
+          <span style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 13px; color: #6B6257; letter-spacing: 0.04em">{{ b.time }}</span>
+          <div>
+            <div style="font-size: 23px; line-height: 1.35; font-weight: 600">{{ b.title }}</div>
+            <div style="font-size: 17px; line-height: 1.55; color: #6B6257; margin-top: 6px">{{ b.detail }}</div>
+          </div>
+        </li>
+      </sc-for>
+    </ol>
+  </section>
+
+  <section id="presenters" style="display: grid; grid-template-columns: 220px 1fr; gap: 64px; padding: 72px 0; border-bottom: 1px solid #DED5C7">
+    <h2 style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6257; margin: 8px 0 0">Presenters</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px; background: #DED5C7; border: 1px solid #DED5C7">
+      <sc-for list="{{ presenters }}" as="p" hint-placeholder-count="4">
+        <article style="background: #FFFFFF; padding: 26px 24px 28px; display: grid; gap: 16px; align-content: start">
+          <div>
+            <div style="font-size: 21px; line-height: 1.3; font-weight: 600">{{ p.name }}</div>
+            <div style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B6257; margin-top: 8px">{{ p.year }}</div>
+          </div>
+          <div style="font-size: 17px; line-height: 1.55; color: #3A352E">{{ p.topic }}</div>
+          <div style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; color: #6B6257; letter-spacing: 0.06em">{{ p.slot }}</div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display: grid; grid-template-columns: 220px 1fr; gap: 64px; padding: 72px 0">
+    <h2 style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6257; margin: 8px 0 0">Attending</h2>
+    <div style="max-width: 62ch">
+      <p style="font-size: 20px; line-height: 1.65; margin: 0; text-wrap: pretty">The forum is open to the whole department. Drop in for a single session or stay for the day — no registration needed.</p>
+    </div>
+  </section>
+
+  <footer style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: baseline; padding-top: 36px; border-top: 1px solid #DED5C7; font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; color: #6B6257">
+    <span>Department of Information &amp; Library Science · Luddy School, Indiana University Bloomington</span>
+    <a href="Doctoral Research Forum.dc.html" style="color: #7A1913">← Back to the forum</a>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;scheduleConfirmed&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;dateLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Friday, November 7&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;venue&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Dorsey Auditorium&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    const confirmed = p.scheduleConfirmed ?? false;
+    const tbd = (x) => confirmed ? x : "To be announced";
+    return {
+      dateLabel: p.dateLabel ?? "Friday, November 7",
+      venue: p.venue ?? "Dorsey Auditorium",
+      statusNote: confirmed
+        ? "Each talk runs 10–15 minutes with time for questions after every pair of presentations."
+        : "The programme below is the shape of the day. Times, talk titles and presenters are confirmed once proposals are reviewed.",
+      blocks: [
+        { time: tbd("9:00 — 9:10"), title: "Welcome", detail: "Opening remarks from the ILS doctoral committee" },
+        { time: tbd("9:10 — 9:50"), title: "Keynote — Joshua Blumenstock", detail: "Chancellor's Professor, UC Berkeley School of Information and Goldman School of Public Policy" },
+        { time: tbd("9:50 — 11:00"), title: "Session I", detail: "Four presentations, 10–15 minutes each" },
+        { time: tbd("11:00 — 11:20"), title: "Coffee", detail: "Dorsey lobby" },
+        { time: tbd("11:20 — 12:30"), title: "Session II", detail: "Four presentations, 10–15 minutes each" },
+        { time: tbd("12:30 — 1:30"), title: "Lunch", detail: "Open conversation with faculty" },
+        { time: tbd("1:30 — 2:45"), title: "Session III", detail: "Work in progress and early-stage proposals" },
+        { time: tbd("2:45 — 3:15"), title: "Closing discussion", detail: "Themes across the day, and next year's forum" }
+      ],
+      presenters: [1, 2, 3, 4, 5, 6].map((n) => ({
+        name: "Presenter name",
+        year: "Ph.D. candidate",
+        topic: "Presentation title and one line on the research question.",
+        slot: "Session " + (n <= 2 ? "I" : n <= 4 ? "II" : "III")
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>
