@@ -9,7 +9,7 @@
 <x-dc>
 <helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Schedule &amp; Presenters — Doctoral Research Forum</title>
+<title>Agenda — Doctoral Research Forum 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
@@ -27,19 +27,66 @@
   <header style="display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 24px 0; border-bottom: 4px double #CDBFA9">
     <div style="display: flex; align-items: center; gap: 14px">
       <img src="iu-trident.ico" alt="Indiana University" style="width: 34px; height: 34px; display: block">
-      <a href="index.html" style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6257; text-decoration: none" style-hover="color: #7A1913">← Doctoral Research Forum</a>
+      <a href="index.dc.html" style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6257; text-decoration: none" style-hover="color: #7A1913">← Doctoral Research Forum</a>
     </div>
     <nav style="display: flex; gap: 28px; font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase">
+      <a href="#agenda" style="color: #1C1A17; text-decoration: none" style-hover="color: #7A1913">Agenda</a>
       <a href="#keynote" style="color: #1C1A17; text-decoration: none" style-hover="color: #7A1913">Keynote</a>
-      <a href="#schedule" style="color: #1C1A17; text-decoration: none" style-hover="color: #7A1913">Schedule</a>
-      <a href="#presenters" style="color: #1C1A17; text-decoration: none" style-hover="color: #7A1913">Presenters</a>
     </nav>
   </header>
 
   <section style="padding: 80px 0 56px; border-bottom: 1px solid #DED5C7">
-    <div style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6257; margin-bottom: 24px">{{ dateLabel }} · {{ venue }}</div>
-    <h1 style="font-size: 60px; line-height: 1.1; font-weight: 600; letter-spacing: -0.015em; margin: 0; max-width: 20ch; text-wrap: balance">Schedule &amp; presenters</h1>
-    <p style="font-size: 20px; line-height: 1.65; color: #3A352E; margin: 24px 0 0; max-width: 58ch; text-wrap: pretty">{{ statusNote }}</p>
+    <div style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6257; margin-bottom: 24px">Department of Information &amp; Library Science · Annual Event 2026</div>
+    <h1 style="font-size: 60px; line-height: 1.1; font-weight: 600; letter-spacing: -0.015em; margin: 0; text-wrap: balance">Agenda</h1>
+    <div style="display: flex; flex-wrap: wrap; gap: 24px 48px; margin-top: 36px; font-size: 19px; line-height: 1.6">
+      <div>
+        <div style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6257; margin-bottom: 6px">Date</div>
+        {{ dateLabel }}
+      </div>
+      <div>
+        <div style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6257; margin-bottom: 6px">Venue</div>
+        {{ venue }}
+      </div>
+      <div>
+        <div style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6257; margin-bottom: 6px">Format</div>
+        10-min talk + 5-min Q&amp;A
+      </div>
+    </div>
+  </section>
+
+  <section id="agenda" style="padding: 64px 0 72px; border-bottom: 1px solid #DED5C7; max-width: 920px">
+    <h2 style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6257; margin: 0 0 20px">Programme</h2>
+    <ol style="list-style: none; margin: 0; padding: 0; display: grid">
+      <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="9">
+        <li style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 28px; padding: 22px 0; border-top: 1px solid #DED5C7; align-items: baseline">
+          <span style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 13px; color: #6B6257; letter-spacing: 0.04em">{{ b.time }}</span>
+          <div>
+            <sc-if value="{{ b.isPause }}" hint-placeholder-val="{{ false }}">
+              <div style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6257">{{ b.title }}</div>
+            </sc-if>
+            <sc-if value="{{ b.isMain }}" hint-placeholder-val="{{ true }}">
+              <div style="font-size: 23px; line-height: 1.35; font-weight: 600">{{ b.title }}</div>
+            </sc-if>
+            <sc-if value="{{ b.hasSpeaker }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top: 8px">
+                <a href="#keynote" style="font-size: 19px; line-height: 1.45; color: #7A1913">{{ b.speaker }}</a>
+                <div style="font-size: 17px; line-height: 1.55; font-style: italic; color: #3A352E; margin-top: 4px">{{ b.affiliation }}</div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.hasPapers }}" hint-placeholder-val="{{ false }}">
+              <ol style="list-style: none; margin: 14px 0 0; padding: 0; display: grid">
+                <sc-for list="{{ b.papers }}" as="pp" hint-placeholder-count="4">
+                  <li style="display: grid; gap: 4px; padding: 14px 0; border-top: 1px dotted #DED5C7">
+                    <span style="font-size: 18px; line-height: 1.45; color: #1C1A17; text-wrap: pretty">{{ pp.title }}</span>
+                    <span style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 13px; line-height: 1.45; letter-spacing: 0.02em; color: #6B6257">{{ pp.name }}</span>
+                  </li>
+                </sc-for>
+              </ol>
+            </sc-if>
+          </div>
+        </li>
+      </sc-for>
+    </ol>
   </section>
 
   <section id="keynote" style="display: grid; grid-template-columns: 220px 1fr; gap: 64px; padding: 72px 0; border-bottom: 1px solid #DED5C7">
@@ -47,7 +94,7 @@
     <div style="max-width: 62ch">
       <img src="jblumenstock.png" alt="Joshua Blumenstock" style="width: 200px; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; border: 1px solid #DED5C7; background: #F7F4EF; float: left; margin: 6px 32px 20px 0; display: block">
       <div>
-        <div style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #7A1913; margin-bottom: 12px">Opens the day</div>
+        <div style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #7A1913; margin-bottom: 12px">9:30 – 10:00</div>
         <h3 style="font-size: 34px; line-height: 1.1; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 10px">Joshua Blumenstock</h3>
         <p style="font-size: 19px; line-height: 1.5; font-style: italic; color: #3A352E; margin: 0 0 24px">Chancellor's Professor at the UC Berkeley School of Information and the Goldman School of Public Policy</p>
         <p style="font-size: 19px; line-height: 1.75; color: #3A352E; margin: 0 0 18px; text-wrap: pretty">Joshua Blumenstock is a professor at the UC Berkeley School of Information, the director of the Global Opportunity Lab, and the faculty co-director of the Center for Effective Global Action.</p>
@@ -63,79 +110,58 @@
     </div>
   </section>
 
-  <section id="schedule" style="display: grid; grid-template-columns: 220px 1fr; gap: 64px; padding: 72px 0; border-bottom: 1px solid #DED5C7">
-    <h2 style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6257; margin: 8px 0 0">Programme</h2>
-    <ol style="list-style: none; margin: 0; padding: 0; display: grid; gap: 0">
-      <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="8">
-        <li style="display: grid; grid-template-columns: 150px 1fr; gap: 40px; padding: 24px 0; border-top: 1px solid #DED5C7; align-items: baseline">
-          <span style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 13px; color: #6B6257; letter-spacing: 0.04em">{{ b.time }}</span>
-          <div>
-            <div style="font-size: 23px; line-height: 1.35; font-weight: 600">{{ b.title }}</div>
-            <div style="font-size: 17px; line-height: 1.55; color: #6B6257; margin-top: 6px">{{ b.detail }}</div>
-          </div>
-        </li>
-      </sc-for>
-    </ol>
-  </section>
-
-  <section id="presenters" style="display: grid; grid-template-columns: 220px 1fr; gap: 64px; padding: 72px 0; border-bottom: 1px solid #DED5C7">
-    <h2 style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6257; margin: 8px 0 0">Presenters</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px; background: #DED5C7; border: 1px solid #DED5C7">
-      <sc-for list="{{ presenters }}" as="p" hint-placeholder-count="4">
-        <article style="background: #FFFFFF; padding: 26px 24px 28px; display: grid; gap: 16px; align-content: start">
-          <div>
-            <div style="font-size: 21px; line-height: 1.3; font-weight: 600">{{ p.name }}</div>
-            <div style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B6257; margin-top: 8px">{{ p.year }}</div>
-          </div>
-          <div style="font-size: 17px; line-height: 1.55; color: #3A352E">{{ p.topic }}</div>
-          <div style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; color: #6B6257; letter-spacing: 0.06em">{{ p.slot }}</div>
-        </article>
-      </sc-for>
-    </div>
-  </section>
-
   <section style="display: grid; grid-template-columns: 220px 1fr; gap: 64px; padding: 72px 0">
-    <h2 style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6257; margin: 8px 0 0">Attending</h2>
-    <div style="max-width: 62ch">
-      <p style="font-size: 20px; line-height: 1.65; margin: 0; text-wrap: pretty">The forum is open to the whole department. Drop in for a single session or stay for the day — no registration needed.</p>
-    </div>
+    <h2 style="font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6257; margin: 8px 0 0">Questions</h2>
+    <p style="font-size: 20px; line-height: 1.65; margin: 0">Avery Banerjee · <a href="mailto:avebane@iu.edu">avebane@iu.edu</a></p>
   </section>
 
   <footer style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: baseline; padding-top: 36px; border-top: 1px solid #DED5C7; font-family: Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 12px; color: #6B6257">
-    <span>Department of Information &amp; Library Science · Luddy School, Indiana University Bloomington</span>
-    <a href="index.html" style="color: #7A1913">← Back to the forum</a>
+    <span>DRF 2026 · Department of Information &amp; Library Science · Luddy School, Indiana University Bloomington</span>
+    <a href="index.dc.html" style="color: #7A1913">← Back to the forum</a>
   </footer>
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;scheduleConfirmed&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;dateLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Friday, November 7&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;venue&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Dorsey Auditorium&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;dateLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Saturday, November 7, 2026&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;venue&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Dorsey Auditorium&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
   renderVals() {
     const p = this.props;
-    const confirmed = p.scheduleConfirmed ?? false;
-    const tbd = (x) => confirmed ? x : "To be announced";
+    const pause = (time, title) => ({ time, title, isPause: true, isMain: false, hasSpeaker: false, hasPapers: false, papers: [] });
+    const session = (time, title, papers) => ({ time, title, isPause: false, isMain: true, hasSpeaker: false, hasPapers: true, papers });
     return {
-      dateLabel: p.dateLabel ?? "Friday, November 7",
+      dateLabel: p.dateLabel ?? "Saturday, November 7, 2026",
       venue: p.venue ?? "Dorsey Auditorium",
-      statusNote: confirmed
-        ? "Each talk runs 10–15 minutes with time for questions after every pair of presentations."
-        : "The programme below is the shape of the day. Times, talk titles and presenters are confirmed once proposals are reviewed.",
       blocks: [
-        { time: tbd("9:00 — 9:10"), title: "Welcome", detail: "Opening remarks from the ILS doctoral committee" },
-        { time: tbd("9:10 — 9:50"), title: "Keynote — Joshua Blumenstock", detail: "Chancellor's Professor, UC Berkeley School of Information and Goldman School of Public Policy" },
-        { time: tbd("9:50 — 11:00"), title: "Session I", detail: "Four presentations, 10–15 minutes each" },
-        { time: tbd("11:00 — 11:20"), title: "Coffee", detail: "Dorsey lobby" },
-        { time: tbd("11:20 — 12:30"), title: "Session II", detail: "Four presentations, 10–15 minutes each" },
-        { time: tbd("12:30 — 1:30"), title: "Lunch", detail: "Open conversation with faculty" },
-        { time: tbd("1:30 — 2:45"), title: "Session III", detail: "Work in progress and early-stage proposals" },
-        { time: tbd("2:45 — 3:15"), title: "Closing discussion", detail: "Themes across the day, and next year's forum" }
-      ],
-      presenters: [1, 2, 3, 4, 5, 6].map((n) => ({
-        name: "Presenter name",
-        year: "Ph.D. candidate",
-        topic: "Presentation title and one line on the research question.",
-        slot: "Session " + (n <= 2 ? "I" : n <= 4 ? "II" : "III")
-      }))
+        pause("9:00 AM", "Breakfast"),
+        { time: "9:30 – 10:00", title: "Keynote", isPause: false, isMain: true, hasSpeaker: true, hasPapers: false, papers: [],
+          speaker: "Joshua Blumenstock",
+          affiliation: "Chancellor's Professor, UC Berkeley School of Information & Goldman School of Public Policy" },
+        session("10:00 – 11:00", "Paper Session I", [
+          { name: "Shohana Akhter", title: "An Integrative Approach to Study Influencers in Social Media News Space" },
+          { name: "Glory Akwa", title: "A Social Informatics Perspective on the Use of Artificial Intelligence in Cancer Radiography" },
+          { name: "Gordon Amidu", title: "Judging the Judges: Cross-Tool Disagreement in AI Content Detection as a Test of Digital Infrastructure Reliability" },
+          { name: "Gracey Nana Amoakoa-Amoako", title: "Unpacking Naming and Shaming: Audience Reactions to AI & HRW Posts on Instagram" }
+        ]),
+        pause("11:00 – 11:10", "Break"),
+        session("11:10 – 12:00", "Paper Session II", [
+          { name: "Avery Banerjee", title: "Reclaiming or Reframing Science? Decolonisation, Institutional Authority, and Scientific Temper in India" },
+          { name: "Yixi Chen", title: "Blurry Boundaries and Outliers: Sampling and Exploring Book Reviews through Amazon Browse Categories" },
+          { name: "Shivangi Garg", title: "Linguistic Performance of Genuineness: A LIWC Analysis of AI Agent Discourse on Moltbook vs. Human Discourse on Reddit" }
+        ]),
+        pause("12:00 – 1:00", "Lunch"),
+        session("1:00 – 2:00", "Paper Session III", [
+          { name: "Yilin Gong", title: "Characterizing AI Fact-Checkers and Their Contributions on Community Notes" },
+          { name: "Gyuri Kang", title: "Computational Literary Studies in Digital Humanities and Information Science" },
+          { name: "Jieli Liu", title: "Organizational Adoption of Generative AI in Leading Academic Libraries: A Comparative Study for China and the United States" },
+          { name: "Mitra Moradzadeh", title: "From Peripheral Ethics to Inscribed Answerability: AI-Agent Discourse about Hiring and Labor on Moltbook" }
+        ]),
+        pause("2:00 – 2:10", "Break"),
+        session("2:10 – 3:00", "Paper Session IV", [
+          { name: "Nosakhare Okuonghae", title: "Generative AI Governance in iSchools" },
+          { name: "Athkia Subat", title: "Deepfakes or Synthetic Avatars? Labeling Effects on Attitudes Towards AI-Generated Videos" },
+          { name: "Abdul Aahad Vakani", title: "AI Capital: Who Really Benefits From AI Usage?" }
+        ])
+      ]
     };
   }
 }
